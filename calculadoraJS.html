@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
 </head>
 <body>
     
@@ -20,10 +20,11 @@
        
         
         <div class="botoes">
-            <button onclick="somar()">Somar( + )</button>
-            <button onclick="subtrair()">Subtrair( - )</button>
-            <button onclick="multiplicar()">MULTIPLICAR( * )</button>
-            <button onclick="dividir()">DIVIDIR( / )</button>
+            <button onclick="exec('+')">SOMAR( + )</button>
+            <button onclick="exec('-')">SUBTRAIR( - )</button>
+            <button onclick="exec('*')">MULTIPLICAR( * )</button>
+            <button onclick="exec('/')">DIVIDIR( / )</button>
+            <button onclick="exec('%')">PORCENTAGEM( % )</button>
         </div>
 
         <div>
@@ -33,46 +34,26 @@
         
 
         <script>
-            function somar() {
-                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
-                console.log(PrimeiroNumero)
-                var SegundoNumero = +document.getElementById('segundoNumero').value
-                console.log(SegundoNumero)
-                console.log(PrimeiroNumero+SegundoNumero)
+           function exec(operacao){
+               var n1 = +document.getElementById('primeiroNumero').value
+               var n2 = +document.getElementById('segundoNumero').value
 
-                var Resultado = document.getElementById('Resultado')
-                Resultado.value = PrimeiroNumero + SegundoNumero
-           }
-           function subtrair() {
-                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
-                console.log(PrimeiroNumero)
-                var SegundoNumero = +document.getElementById('segundoNumero').value
-                console.log(SegundoNumero)
-                console.log(PrimeiroNumero-SegundoNumero)
+               var resultOperacao;
+               switch (operacao){
+                   case '+': resultOperacao = n1 + n2; break;
+                   case '-': resultOperacao = n1 - n2; break;
+                   case '*': resultOperacao = n1 * n2; break;
+                   case '/': resultOperacao = n1 / n2; break;
+                   case '%': resultOperacao = n1 / (n2 * 100); break;
 
-                var Resultado = document.getElementById('Resultado')
-                Resultado.value = PrimeiroNumero - SegundoNumero
-           }
-           function multiplicar() {
-                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
-                console.log(PrimeiroNumero)
-                var SegundoNumero = +document.getElementById('segundoNumero').value
-                console.log(SegundoNumero)
-                console.log(PrimeiroNumero*SegundoNumero)
+                   default: resultOperacao = 'Inválido, tente novamente.'; break;
+               }
 
-                var Resultado = document.getElementById('Resultado')
-                Resultado.value = PrimeiroNumero * SegundoNumero
-           }
-           function dividir() {
-                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
-                console.log(PrimeiroNumero)
-                var SegundoNumero = +document.getElementById('segundoNumero').value
-                console.log(SegundoNumero)
-                console.log(PrimeiroNumero/SegundoNumero)
+                var result = document.getElementById('Resultado')
+                result.value = resultOperacao
 
-                var Resultado = document.getElementById('Resultado')
-                Resultado.value = PrimeiroNumero / SegundoNumero
            }
+           
     
     </script>
 
