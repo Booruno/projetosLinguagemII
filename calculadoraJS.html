@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1>Calculadora</h1>
+            <div>
+               <label for="primeiroNumero">Insira o primeiro número: </label>
+                    <input type="number" id="primeiroNumero">
+            </div>
+        
+            <div>
+                <label for="primeiroNumero">Insira o segundo número: </label>
+                    <input type="number" id="segundoNumero">
+            </div>
+       
+        
+        <div class="botoes">
+            <button onclick="somar()">Somar( + )</button>
+            <button onclick="subtrair()">Subtrair( - )</button>
+            <button onclick="multiplicar()">Multiplicar( * )</button>
+            <button onclick="dividir()">Dividir( / )</button>
+        </div>
+
+        <div>
+            <label for="Resultado">Resultado: </label>
+                <input type="number" id="Resultado">
+        </div>
+        
+
+        <script>
+            function somar() {
+                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
+                console.log(PrimeiroNumero)
+                var SegundoNumero = +document.getElementById('segundoNumero').value
+                console.log(SegundoNumero)
+                console.log(PrimeiroNumero+SegundoNumero)
+
+                var Resultado = document.getElementById('Resultado')
+                Resultado.value = PrimeiroNumero + SegundoNumero
+           }
+           function subtrair() {
+                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
+                console.log(PrimeiroNumero)
+                var SegundoNumero = +document.getElementById('segundoNumero').value
+                console.log(SegundoNumero)
+                console.log(PrimeiroNumero-SegundoNumero)
+
+                var Resultado = document.getElementById('Resultado')
+                Resultado.value = PrimeiroNumero - SegundoNumero
+           }
+           function multiplicar() {
+                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
+                console.log(PrimeiroNumero)
+                var SegundoNumero = +document.getElementById('segundoNumero').value
+                console.log(SegundoNumero)
+                console.log(PrimeiroNumero*SegundoNumero)
+
+                var Resultado = document.getElementById('Resultado')
+                Resultado.value = PrimeiroNumero * SegundoNumero
+           }
+           function dividir() {
+                var PrimeiroNumero = +document.getElementById('primeiroNumero').value
+                console.log(PrimeiroNumero)
+                var SegundoNumero = +document.getElementById('segundoNumero').value
+                console.log(SegundoNumero)
+                console.log(PrimeiroNumero/SegundoNumero)
+
+                var Resultado = document.getElementById('Resultado')
+                Resultado.value = PrimeiroNumero / SegundoNumero
+           }
+    
+    </script>
+
+</body>
+</html>
