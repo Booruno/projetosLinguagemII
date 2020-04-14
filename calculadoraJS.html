@@ -19,13 +19,18 @@
             </div>
        
         
-        <div class="botoes">
-            <button onclick="exec('+')">SOMAR( + )</button>
-            <button onclick="exec('-')">SUBTRAIR( - )</button>
-            <button onclick="exec('*')">MULTIPLICAR( * )</button>
-            <button onclick="exec('/')">DIVIDIR( / )</button>
-            <button onclick="exec('%')">PORCENTAGEM( % )</button>
-        </div>
+        <div>   
+            <select id=operacao name=operacao>
+                <option value="+">SOMAR( + )</option>
+                <option value="-">Subtrair( - )</option>
+                <option value="*">Multiplicar( * )</option>
+                <option value="/">Dividir( / )</option>
+                <option value="%">Porcentagem( % )</option>
+            </select>
+        </div>   
+        
+           
+        <input name="exec" type="button" value="Calcular" onclick="exec()">
 
         <div>
             <label for="Resultado">Resultado: </label>
@@ -34,23 +39,28 @@
         
 
         <script>
-           function exec(operacao){
+          
+           function exec(operador){
                var n1 = +document.getElementById('primeiroNumero').value
                var n2 = +document.getElementById('segundoNumero').value
 
+              
+              var operador = document.getElementById('operacao').value
+
+
                var resultOperacao;
-               switch (operacao){
+               switch (operador){
                    case '+': resultOperacao = n1 + n2; break;
                    case '-': resultOperacao = n1 - n2; break;
                    case '*': resultOperacao = n1 * n2; break;
                    case '/': resultOperacao = n1 / n2; break;
                    case '%': resultOperacao = n1 / (n2 * 100); break;
+                   
 
-                   default: resultOperacao = 'Inválido, tente novamente.'; break;
                }
 
-                var result = document.getElementById('Resultado')
-                result.value = resultOperacao
+               var result = document.getElementById('Resultado')
+               result.value = resultOperacao
 
            }
            
